@@ -46,15 +46,18 @@ const actions = {
     // 这里获取基本信息差用户头像, 可以用这个接口拿到的 id 数据
     // 继续获取后续接口, 拼接起来, 形成完整数据
     // const detail = await getUserDetail(res.userId)
-    store.commit('setUserInfo', {
-      // ...res,
-      // ...detail
-      // 模拟用户信息
-      username: 'admin',
-      roles: {
-        menus: ['employees']
-      }
+    const res = await new Promise((resolve) => {
+      resolve({
+        // ...res,
+        // ...detail
+        // 模拟用户信息
+        username: 'admin',
+        roles: {
+          menus: ['employees']
+        }
+      })
     })
+    store.commit('setUserInfo', res)
   }
 }
 

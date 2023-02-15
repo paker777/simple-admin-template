@@ -2,7 +2,6 @@
 // 引入
 import router from '@/router'
 import store from '@/store'
-import VueRouter from 'vue-router'
 
 // 导航守卫
 router.beforeEach(async(to, from, next) => {
@@ -45,7 +44,3 @@ router.beforeEach(async(to, from, next) => {
   }
 })
 
-const VueRouterPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(to) {
-  return VueRouterPush.call(this, to).catch(err => err)
-}
