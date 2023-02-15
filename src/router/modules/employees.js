@@ -10,13 +10,13 @@ export default {
     // 嵌套在布局的二级路由
     {
       // path 没有设定就是默认显示在父路由中
-      path: '',
+      path: 'index',
       // 中间主要内容的嵌套
       component: () => import('@/views/employees/index.vue'),
       // 设定 meta 决定在菜单中如何显示 (花裤衩封装的功能)
       meta: {
         title: '员工管理',
-        icon: 'dashboard'
+        icon: 'table'
       }
     }
   ]
