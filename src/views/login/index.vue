@@ -98,15 +98,20 @@ export default {
     },
     // 登录请求
     async handleLogin() {
+      this.loading = true
       try {
-        await this.$refs.loginForm.validate()
-        // 调用actions
-        await this.$store.dispatch('user/login', this.loginForm)
-        this.$message.success('登录成功')
-        // 如果成功就跳转
-        this.$router.push('/')
+        setTimeout(async() => {
+          await this.$refs.loginForm.validate()
+          // 调用actions
+          await this.$store.dispatch('user/login', this.loginForm)
+          this.$message.success('登录成功')
+          this.loading = false
+          // 如果成功就跳转
+          this.$router.push('/')
+        }, 500)
       } catch (error) {
         console.log(error)
+        this.loading = false
       }
     }
   }
