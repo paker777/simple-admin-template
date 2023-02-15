@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+      "editorconfig.editorconfig",
+      "octref.vetur",
+      "dbaeumer.vscode-eslint"
+    ]
+}
