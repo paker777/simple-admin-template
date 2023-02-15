@@ -13,8 +13,6 @@ export default {
 <style lang="scss" scoped>
 .app-container {
   .text {
-    height: 2000px;
-    background-color: pink;
     font-size: 30px;
     line-height: 46px;
   }
