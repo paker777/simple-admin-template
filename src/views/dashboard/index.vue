@@ -1,6 +1,8 @@
 <template>
   <div class="app-container">
-    <div class="text">首页</div>
+    <div class="text">
+      <Pagination />
+    </div>
   </div>
 </template>
 

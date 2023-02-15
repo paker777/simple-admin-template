@@ -9,6 +9,9 @@ import '@/styles/index.scss' // global css
 import '@/icons' // icon
 import '@/permission' // permission control
 import lodash from 'lodash'
+// 统一注册全局组件
+import Components from '@/components/index'
+Vue.use(Components)
 Vue.use(ElementUI)
 
 Vue.prototype._ = lodash
