@@ -3,7 +3,9 @@
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
     <div class="main-container">
-      <navbar />
+      <div :class="{'fixed-header':fixedHeader}">
+        <navbar />
+      </div>
       <app-main />
     </div>
   </div>
@@ -27,6 +29,9 @@ export default {
     },
     device() {
       return this.$store.state.app.device
+    },
+    fixedHeader() {
+      return this.$store.state.settings.fixedHeader
     },
     classObj() {
       return {
@@ -67,5 +72,22 @@ export default {
     height: 100%;
     position: absolute;
     z-index: 999;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    width: calc(100% - #{$sideBarWidth});
+    transition: width 0.28s;
+  }
+
+  .hideSidebar .fixed-header {
+    width: calc(100% - 54px)
+  }
+
+  .mobile .fixed-header {
+    width: 100%;
   }
 </style>

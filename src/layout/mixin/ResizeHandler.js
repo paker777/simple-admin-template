@@ -1,5 +1,6 @@
 import store from '@/store'
 
+// 项目移动适配勿删
 const { body } = document
 const WIDTH = 992 // refer to Bootstrap's responsive design
 

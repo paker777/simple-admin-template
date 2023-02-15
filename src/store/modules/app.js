@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-
+// 工具设置
 const state = {
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,

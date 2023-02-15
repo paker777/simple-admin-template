@@ -1,9 +1,5 @@
 module.exports = {
-
-  title: '后台管理',
-  /**
-   * @type {boolean} true | false
-   * @description Whether show the logo in sidebar
-   */
+  title: '后台管理系统', // 网站标题 重启生效
+  fixedHeader: true, // 是否开启头部固定
   sidebarLogo: false // 是否开启logo
 }
