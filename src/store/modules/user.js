@@ -53,7 +53,7 @@ const actions = {
         // 模拟用户信息
         username: 'admin',
         roles: {
-          menus: ['employees']
+          menus: ['Employees']
         }
       })
     })
