@@ -3,7 +3,7 @@
     <div class="text">
       <Pagination />
       <Dialog :visible.sync="visible" title="新增" />
-      <el-button type="primary" @click="visible = true">打开</el-button>
+      <el-button type="primary" @click="$router.push('/employees/index')">打开</el-button>
     </div>
   </div>
 </template>
