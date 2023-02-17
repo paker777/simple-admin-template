@@ -37,7 +37,7 @@ export default {
   components: { Item, AppLink },
   mixins: [FixiOSBug],
   props: {
-    // route object
+    // route 对象
     item: {
       type: Object,
       required: true
@@ -53,7 +53,7 @@ export default {
   },
   data() {
     // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
-    // TODO: refactor with render function
+    // TODO: 用渲染函数重构
     this.onlyOneChild = null
     return {}
   },
@@ -63,18 +63,18 @@ export default {
         if (item.hidden) {
           return false
         } else {
-          // Temp set(will be used if only has one showing child)
+          // 临时设置(如果只有一个子显示，则使用)
           this.onlyOneChild = item
           return true
         }
       })
 
-      // When there is only one child router, the child router is displayed by default
+      // 当只有一个子路由时，默认显示子路由
       if (showingChildren.length === 1) {
         return true
       }
 
-      // Show parent if there are no child router to display
+      // 如果没有要显示的子路由，则显示父路由
       if (showingChildren.length === 0) {
         this.onlyOneChild = { ... parent, path: '', noShowingChildren: true }
         return true

@@ -7,30 +7,29 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /**
- * Note: sub-menu only appear when route children.length >= 1
- * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
+ *  注意:子菜单只在子路由出现时。并且长度>= 1
  *
- * hidden: true                   if set true, item will not show in the sidebar(default is false)
- * alwaysShow: true               if set true, will always show the root menu
- *                                if not set alwaysShow, when item has more than one children route,
- *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
- * name:'router-name'             the name is used by <keep-alive> (must set!!!)
+ * hidden: true                   如果设置为true，项目将不会显示在侧边栏(默认为false)
+ * alwaysShow: true               如果设置为true，将始终显示根菜单
+ *                                如果没有设置alwaysShow，当项目有多个子路由时，
+ *                                它将成为嵌套模式，否则不显示根菜单
+ *
+ * redirect: noRedirect           如果设置noRedirect将不会在面包屑中重定向
+ * name:'router-name'             name:'router-name'用于<keep-alive>(必须设置!!)
  * meta : {
-    roles: ['admin','editor']    control the page roles (you can set multiple roles)
-    title: 'title'               the name show in sidebar and breadcrumb (recommend set)
-    icon: 'svg-name'/'el-icon-x' the icon show in the sidebar
-    breadcrumb: false            if set false, the item will hidden in breadcrumb(default is true)
-    activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
+    roles: ['admin','editor']    ['admin'，'editor']控制页面角色(可以设置多个角色)
+    title: 'title'               显示在侧边栏和面包屑中的名称(推荐设置)
+    icon: 'svg-name'/'el-icon-x' 图标显示在侧栏中
+    breadcrumb: false            如果设置为false，项目将隐藏在Breadcrumb中(默认为true)
+    activeMenu: '/example/list'  如果设置了路径，侧边栏将突出显示您设置的路径
   }
  */
 // 路由模块化
 import employeesRouter from '@/router/modules/employees'
 
 /**
- * constantRoutes
- * a base page that does not have permission requirements
- * all roles can be accessed
+*没有权限要求的基本页面
+*所有角色都可以访问
  */
 export const constantRoutes = [
   {
@@ -42,12 +41,14 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    children: [{
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '首页', icon: 'dashboard', affix: true }
-    }]
+    children: [
+      {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index'),
+        meta: { title: '首页', icon: 'dashboard', affix: true }
+      }
+    ]
   },
   {
     path: '/404',
@@ -55,7 +56,7 @@ export const constantRoutes = [
     hidden: true
   }
 
-  // 404 page must be placed at the end !!!
+  // 404页面必须放在末尾 !!!
   // { path: '*', redirect: '/404', hidden: true }
 ]
 
@@ -64,7 +65,7 @@ export const asyncRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  // mode: 'history', // 需要服务支持
   // base: 'admin',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes

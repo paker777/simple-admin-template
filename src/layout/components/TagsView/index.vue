@@ -161,10 +161,10 @@ export default {
       if (latestView) {
         this.$router.push(latestView.fullPath)
       } else {
-        // now the default is to redirect to the home page if there is no tags-view,
-        // you can adjust it according to your needs.
+        // 如果没有标签视图，默认是重定向到主页,
+        // 你可以根据自己的需要来调整.
         if (view.name === 'Dashboard') {
-          // to reload home page
+          // 重新加载主页
           this.$router.replace({ path: '/redirect' + view.fullPath })
         } else {
           this.$router.push('/')
@@ -173,9 +173,9 @@ export default {
     },
     openMenu(tag, e) {
       const menuMinWidth = 105
-      const offsetLeft = this.$el.getBoundingClientRect().left // container margin left
-      const offsetWidth = this.$el.offsetWidth // container width
-      const maxLeft = offsetWidth - menuMinWidth // left boundary
+      const offsetLeft = this.$el.getBoundingClientRect().left // 容器左边距
+      const offsetWidth = this.$el.offsetWidth // 容器 width
+      const maxLeft = offsetWidth - menuMinWidth // 左边界
       const left = e.clientX - offsetLeft + 15 // 15: margin right
 
       if (left > maxLeft) {

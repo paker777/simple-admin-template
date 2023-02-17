@@ -36,7 +36,7 @@ export default {
     activeMenu() {
       const route = this.$route
       const { meta, path } = route
-      // if set path, the sidebar will highlight the path you set
+      // 如果设置了路径，侧边栏将突出显示所设置的路径
       if (meta.activeMenu) {
         return meta.activeMenu
       }

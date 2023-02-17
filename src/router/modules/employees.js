@@ -20,9 +20,22 @@ export default {
       component: () => import('@/views/employees/index.vue'),
       // 设定 meta 决定在菜单中如何显示 (花裤衩封装的功能)
       meta: {
-        title: '员工管理',
+        title: '员工管理页',
         icon: 'table'
       }
+    },
+    {
+      name: 'EmployeesDetail',
+      // path 没有设定就是默认显示在父路由中
+      path: 'employees-detail',
+      // 中间主要内容的嵌套
+      component: () => import('@/views/employees/detail.vue'),
+      meta: {
+        title: '员工详情',
+        icon: 'table'
+      }
+      // hidden: true
+      // 设定 meta 决定在菜单中如何显示 (花裤衩封装的功能)
     }
   ]
 }
