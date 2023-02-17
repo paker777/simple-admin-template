@@ -8,8 +8,8 @@ import router from '@/router'
 const service = axios.create({
   // process.env 是脚手架工具获取环境变量的属性
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  // withCredentials: true, // 当跨域请求时发送cookie
+  timeout: 5000 // 请求超时
 })
 
 // token过期时间处理函数
