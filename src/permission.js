@@ -17,7 +17,7 @@ router.beforeEach(async(to, from, next) => {
     // 读取用户数据筛选路由
     // 在进入每个后台页面之前, 保证有用户数据
     // 确认用户数据是否存在, 如果不存在, 则获取数据
-    if (!store.state.user.userInfo.username) {
+    if (Object.keys(store.state.user.userInfo).length === 0) {
       await store.dispatch('user/getUserInfo')
       // 拿完数据之后, 进入页面之前, 就是触发路由权限筛选的位置
       const routes = await store.dispatch(

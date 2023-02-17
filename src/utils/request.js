@@ -12,9 +12,8 @@ const service = axios.create({
   timeout: 5000 // request timeout
 })
 
+// token过期时间处理函数
 const checkTimeout = () => {
-  // 之前是判断到有 token 就带上 token
-  // 由于需要被动介入, 还要检查超时文成
   const timeout = 1000 * 60 * 60 * 2
   const now = Date.now()
   const loginTime = localStorage.getItem('timestamp')

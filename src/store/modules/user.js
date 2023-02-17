@@ -41,10 +41,7 @@ const actions = {
   },
   // 获取用户信息
   async getUserInfo(store) {
-    // profile 是登陆用户的基本信息, 比较简单
-    // const res = await getProfile()
-    // 这里获取基本信息差用户头像, 可以用这个接口拿到的 id 数据
-    // 继续获取后续接口, 拼接起来, 形成完整数据
+    // 模拟用户信息请求
     // const detail = await getUserDetail(res.userId)
     const res = await new Promise((resolve) => {
       resolve({
